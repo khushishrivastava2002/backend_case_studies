@@ -1,0 +1,39 @@
+# Virtual Environment
+venv/
+
+# Environment Variables
+.env
+**/.env
+
+# Assignment PDF
+Take-Home Assignment - Python Developer.pdf
+
+# Internal Documentation (Hinglish)
+case_study_1/case_study_1_explanation.md
+case_study_1/interview_questions.md
+
+# Server Logs & PID
+*.log
+*.pid
+
+# Python Cache & Bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.git
+.mypy_cache
+.pytest_cache
+.hypothes

@@ -1,0 +1,172 @@
+Take-Home Assignment
+Python Developer – Computer Vision Engineering Team
+
+CASE STUDY 1
+Traffic Event & Analytics Service
+Western Express Highway (Andheri → Bandra)
+You will build a Python backend service that ingests traffic signals and converts them into
+meaningful events and analytics.
+
+Scope
+Analyze traffic conditions for:
+●​ Road: Western Express Highway​
+●​ Stretch: Andheri → Bandra (Mumbai)​
+●​ Time window: A single calendar day of your choice​
+
+The road/location details must be configurable (not hard-coded in business logic).
+
+Data Source
+Use HERE Traffic APIs:
+https://www.here.com/docs/category/maps-traffic
+●​ Traffic Flow (required) – for speeds and congestion​
+●​ Traffic Incidents (optional / bonus) – for accidents​
+
+You are expected to:
+●​ Read the API documentation​
+●​ Handle authentication​
+●​ Make periodic API calls​
+●​ Parse and store responses​
+
+What You Need to Build
+1.​ Data Ingestion
+●​ Periodically fetch traffic flow data (e.g., every 5–10 minutes)​
+●​ Extract and store at least:​
+○​ timestamp​
+○​ average speed​
+○​ free-flow speed (or equivalent baseline)​
+
+Ingestion may be:
+●​ a scheduled job, or​
+●​ a manually triggered API endpoint​
+
+2.​ Event Detection (Core Requirement)
+Implement stateful congestion detection.
+Define your own logic for detecting the following states:
+●​ Congestion Started​
+​
+●​ Congestion Cleared​
+
+Events must:
+
+●​ Be stateful (no repeated alerts every poll)​
+●​ Have a lifecycle:​
+○​ start time​
+○​ end time​
+○​ status (ACTIVE, RESOLVED)​
+
+3.​ Analytics
+Display analytics for the selected day, such as:
+●​ Hourly average speed​
+●​ Total number of congestion events​
+●​ Total congestion duration (in minutes)​
+
+4.​ Alert / Notification APIs
+Expose APIs to retrieve:
+●​ Active alerts​
+●​ Alert history​
+
+Alerts should include:
+●​ type (e.g., CONGESTION)​
+●​ start time​
+●​ current status​
+
+No push notifications, WebSockets, or UI are required.
+
+Minimum API Endpoints
+Your service should expose functionality equivalent to:
+POST /ingest/run
+GET
+
+/analytics/hourly-speeds
+
+GET
+
+/alerts/active
+
+GET
+
+/alerts/history
+
+Technical Guidelines
+●​ Language: Python​
+●​ Framework: Flask / FastAPI / Django (your choice)​
+●​ Database: Your choice (MySQL, SQLite or MongoDB(preferred))​
+●​ Clean project structure and modular code​
+●​ Configuration via environment variables or config files​
+●​ Meaningful logging and error handling
+
+Optional / Bonus
+●​ Traffic incident ingestion (accidents)​
+●​ Multiple alert types (slow traffic vs heavy congestion)
+
+CASE STUDY 2
+Vehicle Counting from a Live Traffic Camera
+This assignment evaluates how you explore CV libraries, reason about noisy data, and build a
+basic but robust pipeline.
+
+Problem Statement
+You will be provided with a live YouTube traffic camera stream covering a road intersection.
+Your task is to:
+●​ Capture frames from the live stream​
+●​ Detect vehicles​
+●​ Count vehicles moving in each direction​
+●​ Report counts for a fixed duration
+
+Input
+●​ A live YouTube traffic camera URL
+○​ https://www.youtube.com/live/B0YjuKbVZ5w?si=Pgn-xB8PE9v_p9RO​
+●​ Assume a fixed, static camera​
+
+You may:
+●​ Process a fixed duration (e.g., 3–5 minutes)​
+●​ Sample frames at a reasonable rate (e.g., 1–2 FPS)
+
+Output
+At the end of the run, output:
+Duration processed: 5 minutes
+Direction A: 124 vehicles
+
+Direction B: 97 vehicles
+Total vehicles: 221
+
+Direction naming is up to you (e.g., Left/Right, North/South).
+Add clip of the partition fo the video processed in your submission from the overall video
+
+Technical Requirements
+●​ Language: Python​
+●​ You may use:​
+○​ OpenCV​
+○​ Pretrained YOLO (Ultralytics, etc.)​
+○​ Any equivalent CV library​
+●​ No model training required​
+●​ Basic tracking is optional
+
+Deliverables (Both Case Studies)
+Please submit:
+1.​ Send code in Zip file
+○​ If possible host the code on public URL and share link for demo evaluation
+
+2.​ A Git repository​
+
+3.​ A README that includes:​
+
+○​ Setup instructions​
+○​ How to run each case study​
+○​ Key assumptions​
+○​ Known limitations​
+○​ What you would improve with more time
+3. For case study 2 show output video with logical overlays and bounding boxes​
+
+Optional:
+●​ Screenshots or short video snippets​
+●​ Logs or sample outputs​
+
+Final Note
+There is no single “correct” solution — we are interested in:
+●​ How you think​
+●​ How you structure problems​
+●​ How you deal with ambiguity​
+
+We look forward to discussing your approach and decisions with you.
+
+
