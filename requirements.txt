@@ -4,3 +4,7 @@ beanie
 motor
 pydantic-settings
 python-dotenv
+ultralytics
+opencv-python-headless
+yt-dlp
+lapx

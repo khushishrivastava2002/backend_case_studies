@@ -11,6 +11,8 @@ Take-Home Assignment - Python Developer.pdf
 # Internal Documentation (Hinglish)
 case_study_1/case_study_1_explanation.md
 case_study_1/interview_questions.md
+case_study_2/case_study_2_explanation.md
+case_study_2/interview_questions.md
 
 # Server Logs & PID
 *.log
@@ -37,3 +39,7 @@ coverage.xml
 .mypy_cache
 .pytest_cache
 .hypothes
+
+# AI Models & Outputs
+*.pt
+*.mp4
